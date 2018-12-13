@@ -1,5 +1,5 @@
 在vue2.0中使用px2rem
-1.cnpm install lib-flexible --save-dev //flexible.js是淘宝出的弹性布局解决方式
+1.cnpm install lib-flexible --save-dev //flexible.js是淘宝出的弹性布局解决方式	
 下载完成直接在入口文件main.js import 'lib-flexible'引入即可
 2.cnpm install postcss-loader --save-dev
   cnpm install px2rem-loader --save-dev
