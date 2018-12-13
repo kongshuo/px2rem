@@ -4,7 +4,8 @@
 <p>2.cnpm install postcss-loader --save-dev</p>
  <p>cnpm install px2rem-loader --save-dev</p>
 <p>3.配置px2rem,在build文件中的utils.js中，代码如下</p>
-<div>exports.cssLoaders = function (options) {
+<div>
+ exports.cssLoaders = function (options) {
   options = options || {}
 
   const cssLoader = {
@@ -21,7 +22,8 @@
     }
   }
 
-  <a href="javascript:;">const px2remLoader = {
+  <a href="javascript:;">
+ const px2remLoader = {
     loader: 'px2rem-loader',
     options: {
       remUnit: 75,//表示1rem = 75px
@@ -31,21 +33,13 @@
 
   // generate loader string to be used with extract text plugin
   function generateLoaders (loader, loaderOptions) {
-    const loaders = options.usePostCSS
-      ? <a href="javascript:;">[cssLoader, px2remLoader, postcssLoader]
-      : [cssLoader]</a>
-
-    if (loader) {
-      loaders.push({
-        loader: loader + '-loader',
-        options: Object.assign({}, loaderOptions, {
-          sourceMap: options.sourceMap
-        })
-      })
-    }
+    const loaders = options.usePostCSS?
+      <a href="javascript:;">[cssLoader, px2remLoader, postcssLoader]</a>
+      : [cssLoader]
     </div>
 <p>4.在vue-loader中，代码如下</p>
-<div>module.exports = {
+<div>
+ module.exports = {
   loaders: utils.cssLoaders({
     sourceMap: sourceMapEnabled,
     extract: isProduction
