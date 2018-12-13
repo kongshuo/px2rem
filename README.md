@@ -7,17 +7,18 @@
 <div>
  exports.cssLoaders = function (options) {
   options = options || {}
+ 在此添加
   const px2remLoader = {
     loader: 'px2rem-loader',
     options: {
       remUnit: 75,//表示1rem = 75px
       baseDpr: 2
     }
-  }新增内容
+  }
 
   function generateLoaders (loader, loaderOptions) {
     const loaders = options.usePostCSS?
-      [cssLoader, px2remLoader //新增, postcssLoader]
+      [cssLoader, 添加px2remLoader, postcssLoader]
       : [cssLoader]
     </div>
 <p>4.在vue-loader中，代码如下</p>
@@ -35,7 +36,7 @@
     img: 'src',
     image: 'xlink:href'
   },
-  postcss: [require('postcss-px2rem')()] //新增
+  添加postcss: [require('postcss-px2rem')()]
 }
   </div>
 <p>5.cnpm run dev重启项目</p>
