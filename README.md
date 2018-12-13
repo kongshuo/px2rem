@@ -7,34 +7,17 @@
 <div>
  exports.cssLoaders = function (options) {
   options = options || {}
-
-  const cssLoader = {
-    loader: 'css-loader',
-    options: {
-      sourceMap: options.sourceMap
-    }
-  }
-
-  const postcssLoader = {
-    loader: 'postcss-loader',
-    options: {
-      sourceMap: options.sourceMap
-    }
-  }
-
-  <a href="javascript:;">
- const px2remLoader = {
+  const px2remLoader = {
     loader: 'px2rem-loader',
     options: {
       remUnit: 75,//表示1rem = 75px
       baseDpr: 2
     }
-  }</a>
+  }新增内容
 
-  // generate loader string to be used with extract text plugin
   function generateLoaders (loader, loaderOptions) {
     const loaders = options.usePostCSS?
-      <a href="javascript:;">[cssLoader, px2remLoader, postcssLoader]</a>
+      [cssLoader, px2remLoader //新增, postcssLoader]
       : [cssLoader]
     </div>
 <p>4.在vue-loader中，代码如下</p>
@@ -52,7 +35,7 @@
     img: 'src',
     image: 'xlink:href'
   },
-  <a href="javascript:;">postcss: [require('postcss-px2rem')()]</a>
+  postcss: [require('postcss-px2rem')()] //新增
 }
   </div>
 <p>5.cnpm run dev重启项目</p>
