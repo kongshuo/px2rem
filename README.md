@@ -9,6 +9,7 @@
  exports.cssLoaders = function (options) {
   options = options || {}
  在此添加
+ <p>
  <span style="color:blue;">
   const px2remLoader = {
     loader: 'px2rem-loader',
@@ -18,10 +19,13 @@
     }
   }
  </span>
+ </p>
+ <p>
   function generateLoaders (loader, loaderOptions) {
     const loaders = options.usePostCSS?
       [cssLoader, 添加： <span style="color:blue;">px2remLoader </span>, postcssLoader]
       : [cssLoader]
+  </p>
     </div>
 <p>4.在vue-loader中，代码如下</p>
 <div>
@@ -38,7 +42,7 @@
     img: 'src',
     image: 'xlink:href'
   },
-  添加：<span style="color:blue;">postcss: [require('postcss-px2rem')()]</span>
+  添加：<p><span style="color:blue;">postcss: [require('postcss-px2rem')()]</span></p>
 }
   </div>
 <p>5.cnpm run dev重启项目</p>
